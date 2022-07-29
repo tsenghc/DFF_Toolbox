@@ -15,10 +15,12 @@
             <h2 class="text-center">Device info</h2>
             <table class="table table-striped table-hover">
                 <tbody>
+                    {% for header in headers %}
                     <tr>
-                        <td class="text-center">{{User_Agent}}</td>
-                        <td class="text-center">Chrome/103.0.0.0</td>
+                        <td class="text-center">{{ header.field }}</td>
+                        <td class="text-center">{{ header.data }}</td>
                     </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

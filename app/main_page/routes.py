@@ -19,10 +19,10 @@ def show_index():
     headers=[]
 
     for i in request.headers:
-        headers.append(i)
-        if i[0]=="User-Agent":
-            UA=user_agent_parser.Parse(i[1])
-            print(UA)
-    # print(headers)
+        headers.append({'field' : i[0], 'data' : i[1]})
+        #headers.append(i)
+        #if i[0]=="User-Agent":
+            #UA=user_agent_parser.Parse(i[1])
+            #print(UA)
     
-    return render_template('index.html',User_Agent=UA["user_agent"])
+    return render_template('index.html', headers = headers)
